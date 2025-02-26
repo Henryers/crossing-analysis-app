@@ -28,7 +28,8 @@ class MyWindow(QWidget):
         self.init_ui()
     def init_ui(self):
         # 加载qt-designer中设计的ui文件
-        self.ui = uic.loadUi("./traffic1.0.ui")
+        # self.ui = uic.loadUi("./traffic1.0.ui")
+        self.ui = uic.loadUi(r"D:\MyCode\public_project\crossing-analysis-app\code\traffic1.0.ui")
         # 菜单下拉框
         self.actionlight = self.ui.actionlight
         self.actiondark = self.ui.actiondark
@@ -175,23 +176,23 @@ class MyWindow(QWidget):
         # 初始化为0，用作判断用户是否打开数据集
         self.df = 0
         # 预加载所需的所有数据表
-        xlsx_1_1 = pd.ExcelFile('./data/1进口/1_1.xlsx')
-        xlsx_1_2 = pd.ExcelFile('./data/1进口/1_2.xlsx')
-        xlsx_1_3 = pd.ExcelFile('./data/1进口/1_3.xlsx')
-        xlsx_1_4 = pd.ExcelFile('./data/1进口/1_4.xlsx')
-        xlsx_1_5 = pd.ExcelFile('./data/1进口/1_5.xlsx')
-        xlsx_2_1 = pd.ExcelFile('./data/2进口/2_1.xlsx')
-        xlsx_2_4 = pd.ExcelFile('./data/2进口/2_4.xlsx')
-        xlsx_3_1 = pd.ExcelFile('./data/3进口/3_1.xlsx')
-        xlsx_3_5 = pd.ExcelFile('./data/3进口/3_5.xlsx')
-        xlsx_4_1 = pd.ExcelFile('./data/4进口/4_1.xlsx')
-        xlsx_4_2 = pd.ExcelFile('./data/4进口/4_2.xlsx')
-        xlsx_4_3 = pd.ExcelFile('./data/4进口/4_3.xlsx')
-        xlsx_4_4 = pd.ExcelFile('./data/4进口/4_4.xlsx')
-        xlsx_1_6 = pd.ExcelFile('./data/行人电动车自行车/1_6.xlsx')
-        xlsx_2_6 = pd.ExcelFile('./data/行人电动车自行车/2_6.xlsx')
-        xlsx_3_6 = pd.ExcelFile('./data/行人电动车自行车/3_6.xlsx')
-        xlsx_4_6 = pd.ExcelFile('./data/行人电动车自行车/4_6.xlsx')
+        xlsx_1_1 = pd.ExcelFile('../data/1进口/1_1.xlsx')
+        xlsx_1_2 = pd.ExcelFile('../data/1进口/1_2.xlsx')
+        xlsx_1_3 = pd.ExcelFile('../data/1进口/1_3.xlsx')
+        xlsx_1_4 = pd.ExcelFile('../data/1进口/1_4.xlsx')
+        xlsx_1_5 = pd.ExcelFile('../data/1进口/1_5.xlsx')
+        xlsx_2_1 = pd.ExcelFile('../data/2进口/2_1.xlsx')
+        xlsx_2_4 = pd.ExcelFile('../data/2进口/2_4.xlsx')
+        xlsx_3_1 = pd.ExcelFile('../data/3进口/3_1.xlsx')
+        xlsx_3_5 = pd.ExcelFile('../data/3进口/3_5.xlsx')
+        xlsx_4_1 = pd.ExcelFile('../data/4进口/4_1.xlsx')
+        xlsx_4_2 = pd.ExcelFile('../data/4进口/4_2.xlsx')
+        xlsx_4_3 = pd.ExcelFile('../data/4进口/4_3.xlsx')
+        xlsx_4_4 = pd.ExcelFile('../data/4进口/4_4.xlsx')
+        xlsx_1_6 = pd.ExcelFile('../data/行人电动车自行车/1_6.xlsx')
+        xlsx_2_6 = pd.ExcelFile('../data/行人电动车自行车/2_6.xlsx')
+        xlsx_3_6 = pd.ExcelFile('../data/行人电动车自行车/3_6.xlsx')
+        xlsx_4_6 = pd.ExcelFile('../data/行人电动车自行车/4_6.xlsx')
         self.df1_1 = pd.read_excel(xlsx_1_1)
         self.df1_2 = pd.read_excel(xlsx_1_2)
         self.df1_3 = pd.read_excel(xlsx_1_3)
@@ -258,7 +259,7 @@ class MyWindow(QWidget):
             layout = QHBoxLayout(dialog)
             # 左侧的 QLabel，用于显示图片
             image_label = QLabel()
-            pixmap = QPixmap('./traffic.png')  # 替换为您的图片路径
+            pixmap = QPixmap('traffic.png')  # 替换为您的图片路径
             pixmap = pixmap.scaled(300, 220)
             image_label.setPixmap(pixmap)
             image_label.setAlignment(Qt.AlignCenter)
@@ -297,7 +298,7 @@ class MyWindow(QWidget):
             text_layout.addWidget(btn, alignment=Qt.AlignCenter)
             layout.addLayout(text_layout)
             # 加载对话框图标
-            dialog.setWindowIcon(QIcon("./data/car.jpg"))
+            dialog.setWindowIcon(QIcon("../data/car.jpg"))
             # 显示对话框，而不是一闪而过
             dialog.exec()
         except Exception as e:
@@ -312,7 +313,7 @@ class MyWindow(QWidget):
             layout = QHBoxLayout(dialog)
             # 左侧的 QLabel，用于显示图片
             image_label = QLabel()
-            pixmap = QPixmap('./traffic.png')  # 替换为您的图片路径
+            pixmap = QPixmap('traffic.png')  # 替换为您的图片路径
             pixmap = pixmap.scaled(300, 220)
             image_label.setPixmap(pixmap)
             image_label.setAlignment(Qt.AlignCenter)
@@ -358,7 +359,7 @@ class MyWindow(QWidget):
             text_layout.addWidget(btn, alignment=Qt.AlignCenter)
             layout.addLayout(text_layout)
             # 加载对话框图标
-            dialog.setWindowIcon(QIcon("./data/car.jpg"))
+            dialog.setWindowIcon(QIcon("../data/car.jpg"))
             # 显示对话框，而不是一闪而过
             dialog.exec()
         except Exception as e:
@@ -1209,7 +1210,7 @@ class MyWindow(QWidget):
             print(e)
         scene = QGraphicsScene()
         if data['target_tag'][1] == 'veh':
-            img = QPixmap("./data/car.jpg")
+            img = QPixmap("../data/car.jpg")
             img = img.scaled(450, 400)
             scene.addPixmap(img)
             self.show_image.setScene(scene)
@@ -1219,7 +1220,7 @@ class MyWindow(QWidget):
             # self.show_image.setRenderHint(QPainter.HighQualityAntialiasing, True)
         elif data['target_tag'][1] == 'bus':
             try:
-                img = QPixmap("./data/bus.jpg")
+                img = QPixmap("../data/bus.jpg")
                 img = img.scaled(450, 400)
                 scene.addPixmap(img)
                 self.show_image.setScene(scene)
@@ -1227,7 +1228,7 @@ class MyWindow(QWidget):
                 print(e)
         elif data['target_tag'][1] == 'human':
             try:
-                img = QPixmap("./data/human.jpg")
+                img = QPixmap("../data/human.jpg")
                 img = img.scaled(450, 400)
                 scene.addPixmap(img)
                 self.show_image.setScene(scene)
@@ -1235,7 +1236,7 @@ class MyWindow(QWidget):
                 print(e)
         elif data['target_tag'][1] == 'bike':
             try:
-                img = QPixmap("./data/bike.jpg")
+                img = QPixmap("../data/bike.jpg")
                 img = img.scaled(450, 400)
                 scene.addPixmap(img)
                 self.show_image.setScene(scene)
@@ -1243,7 +1244,7 @@ class MyWindow(QWidget):
                 print(e)
         else:
             try:
-                img = QPixmap("./data/ele_veh.jpg")
+                img = QPixmap("../data/ele_veh.jpg")
                 img = img.scaled(400, 400)
                 scene.addPixmap(img)
                 self.show_image.setScene(scene)
