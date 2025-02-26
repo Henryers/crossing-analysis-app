@@ -1,0 +1,2411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2595</width>
+    <height>1551</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>无信号交叉口数据可视化分析软件</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../data/car.jpg</normaloff>../data/car.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="chart2_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>950</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>数据分析图表</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="video_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>230</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>视频展示</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dataset_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>410</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>数据集</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>120</y>
+      <width>2041</width>
+      <height>1261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget{
+	border: 0;
+	background-color: blue;
+	pane{right:-1px;}
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <property name="documentMode">
+     <bool>true</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="tab_1">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>130</y>
+        <width>311</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>18</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 18pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>道路视频展示</string>
+      </property>
+     </widget>
+     <widget class="QVideoWidget" name="video" native="true">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>240</y>
+        <width>941</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QVideoWidget{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="play_pause">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>1080</y>
+        <width>251</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 87 12pt &quot;Arial Black&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>play / pause</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="choose_video">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>130</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 87 12pt &quot;Arial Black&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>choose</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="slider">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>980</y>
+        <width>771</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="time">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>980</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>--/--</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graph_road">
+      <property name="geometry">
+       <rect>
+        <x>1050</x>
+        <y>240</y>
+        <width>851</width>
+        <height>821</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>1050</x>
+        <y>130</y>
+        <width>791</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>18</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 18pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>交叉口部分车辆行驶轨迹可视化</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export1">
+      <property name="geometry">
+       <rect>
+        <x>1720</x>
+        <y>1090</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>63</x>
+        <y>51</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>数据集选择</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="xlsx">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>450</y>
+        <width>1901</width>
+        <height>691</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTableWidget{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="selectxlsx_btn">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>40</y>
+        <width>181</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 87 12pt &quot;Arial Black&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>select</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>180</y>
+        <width>391</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>18</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 18pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>当前数据集信息</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="enter_num">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>350</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>290</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>进口:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>290</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>车道:</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="road_num">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>350</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>1620</x>
+        <y>250</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>行数</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>1620</x>
+        <y>350</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>列数</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="row">
+      <property name="geometry">
+       <rect>
+        <x>1760</x>
+        <y>240</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="col">
+      <property name="geometry">
+       <rect>
+        <x>1760</x>
+        <y>340</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>280</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>总车辆数量</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="all_car_num">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>350</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>tab_3</string>
+     </attribute>
+     <widget class="QWebEngineView" name="hotmap" native="true">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>200</y>
+        <width>931</width>
+        <height>801</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWebEngineView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>80</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>热力图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>1120</x>
+        <y>90</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>三维图</string>
+      </property>
+     </widget>
+     <widget class="QWebEngineView" name="bar3d" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1120</x>
+        <y>200</y>
+        <width>861</width>
+        <height>801</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWebEngineView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>1110</y>
+        <width>1591</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>注：车辆最密集的地方是路口等红灯停车处，密集处围着的位置是交叉口中心</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo3_1">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>120</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox{
+	background-color: white;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>车辆</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>行人/电动/自行车</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="combo3_2">
+      <property name="geometry">
+       <rect>
+        <x>1676</x>
+        <y>121</y>
+        <width>301</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox{
+	background-color: white;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>车辆</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>行人/电动/自行车</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="export3_1">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>1030</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export3_2">
+      <property name="geometry">
+       <rect>
+        <x>1790</x>
+        <y>1030</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Tab 4</string>
+     </attribute>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>591</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>单车道车辆/单方向行人小车热力图</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>110</y>
+        <width>741</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>单车道车辆/单方向行人小车3D图</string>
+      </property>
+     </widget>
+     <widget class="QWebEngineView" name="small_hotmap" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>200</y>
+        <width>921</width>
+        <height>831</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWebEngineView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QWebEngineView" name="small_bar3d" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>200</y>
+        <width>891</width>
+        <height>831</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWebEngineView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export4_1">
+      <property name="geometry">
+       <rect>
+        <x>764</x>
+        <y>1060</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export4_2">
+      <property name="geometry">
+       <rect>
+        <x>1760</x>
+        <y>1060</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Tab 5</string>
+     </attribute>
+     <widget class="QGraphicsView" name="chart3">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>90</y>
+        <width>681</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>130</y>
+        <width>421</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>黑体</family>
+        <pointsize>18</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 18pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>单车道数据可视化</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chart4">
+      <property name="geometry">
+       <rect>
+        <x>1230</x>
+        <y>90</y>
+        <width>721</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chart5">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>600</y>
+        <width>1861</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>260</y>
+        <width>291</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>不同型号人/车</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>310</y>
+        <width>291</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>数据统计分布</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>550</y>
+        <width>601</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>不同时段该车道车流量/人流量统计</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="combo">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>510</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox{
+	background-color: white;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>柱状图</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>折线图</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>组合图</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="export5_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>450</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存图表2</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export5_1">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>390</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存图表1</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export5_3">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>510</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存图表3</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Tab 6</string>
+     </attribute>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>200</y>
+        <width>171</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>具体车辆/行人：</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="show_image">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>270</y>
+        <width>541</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>80</y>
+        <width>371</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 18pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>该车/人具体信息：</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>100</y>
+        <width>181</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="search_btn">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>100</y>
+        <width>211</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>一键查询</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>560</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>人/车位置</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>1390</x>
+        <y>560</y>
+        <width>211</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>人/车速度</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chart_speed">
+      <property name="geometry">
+       <rect>
+        <x>1390</x>
+        <y>620</y>
+        <width>601</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chart_location">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>620</y>
+        <width>581</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>800</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>人/车id</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>900</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>人/车名称</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>1000</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>类型</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_id">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>790</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_name">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>890</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_veh">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>990</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>800</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>平均速度</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_speed">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>790</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_status">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>1090</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_acc">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>890</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_alltime">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>990</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="show_direction">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>1090</y>
+        <width>131</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>1100</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>转向</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>1000</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>总用时</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>1100</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>状态</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>900</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 9pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>平均加速度</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chart_curve">
+      <property name="geometry">
+       <rect>
+        <x>1110</x>
+        <y>100</y>
+        <width>881</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>260</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>人/车转角  </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>320</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>曲率轨迹</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export6_1">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>460</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export6_2">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>1160</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export6_3">
+      <property name="geometry">
+       <rect>
+        <x>1810</x>
+        <y>1160</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Tab 7</string>
+     </attribute>
+     <widget class="QPushButton" name="pytorch_btn">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>110</y>
+        <width>211</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>模型训练</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="show_pytorch">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>210</y>
+        <width>1221</width>
+        <height>831</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>210</y>
+        <width>181</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>训练次数</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>370</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>学习率</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_39">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>510</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>训练批量大小</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_epoch">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>210</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_lr">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>360</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_size">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>510</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>680</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>loss损失值</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>830</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>训练集精度</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>1450</x>
+        <y>980</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+      </property>
+      <property name="text">
+       <string>测试集精度</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="output_loss">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>680</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="output_train_acc">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>830</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="output_test_acc">
+      <property name="geometry">
+       <rect>
+        <x>1710</x>
+        <y>980</y>
+        <width>151</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="export7">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>1070</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	font: 12pt &quot;黑体&quot;;
+	background-color: rgb(100,200,255);
+	border-radius: 10%;
+	color: white
+}</string>
+      </property>
+      <property name="text">
+       <string>保存/导出</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>30</y>
+      <width>1571</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color: rgb(100, 160, 240);
+	font: 28pt &quot;优设标题黑&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>基于无信号交叉口的车辆/行人动态数据可视化分析</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="chart1_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>770</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>数据分布图表</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="single_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>1130</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>具体人/车分析</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>1410</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>进口:</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="all_enter_num">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>1410</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="all_road_num">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>1410</y>
+      <width>121</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextBrowser{
+	background-color: white;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>1410</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: 14pt &quot;黑体&quot;;
+	color: rgb(0, 200, 255)
+}</string>
+    </property>
+    <property name="text">
+     <string>车道:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="all_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>590</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>路口情况</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="d2l_btn">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>1310</y>
+      <width>301</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgb(100,160,240);
+	border-radius: 5px;
+	height:80px;
+	color: white;
+	font: 16pt &quot;黑体&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>深度学习测试</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_36">
+    <property name="geometry">
+     <rect>
+      <x>1380</x>
+      <y>1410</y>
+      <width>1161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>黑体</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: 12pt &quot;黑体&quot;;
+	color: rgb(220, 220, 0)
+}</string>
+    </property>
+    <property name="text">
+     <string>注：选择行人/电动自行车数据时，车道显示6，进口表示对应路口方向</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2595</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="theme">
+    <property name="title">
+     <string>主题</string>
+    </property>
+    <addaction name="actionlight"/>
+    <addaction name="actiondark"/>
+    <addaction name="actiongrey"/>
+    <addaction name="actionbrown"/>
+    <addaction name="actiondefault"/>
+   </widget>
+   <widget class="QMenu" name="about">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionintro"/>
+    <addaction name="actionversion"/>
+   </widget>
+   <widget class="QMenu" name="exit">
+    <property name="title">
+     <string>退出</string>
+    </property>
+    <addaction name="actionexit"/>
+   </widget>
+   <addaction name="theme"/>
+   <addaction name="about"/>
+   <addaction name="exit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionlight">
+   <property name="text">
+    <string>light</string>
+   </property>
+  </action>
+  <action name="actiondark">
+   <property name="text">
+    <string>dark</string>
+   </property>
+  </action>
+  <action name="actiongrey">
+   <property name="text">
+    <string>grey</string>
+   </property>
+  </action>
+  <action name="actionbrown">
+   <property name="text">
+    <string>brown</string>
+   </property>
+  </action>
+  <action name="actionintro">
+   <property name="text">
+    <string>intro</string>
+   </property>
+  </action>
+  <action name="actionversion">
+   <property name="text">
+    <string>version</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="text">
+    <string>exit</string>
+   </property>
+  </action>
+  <action name="actiondefault">
+   <property name="text">
+    <string>default</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>PyQt5.QtMultimediaWidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">PyQt5.QtWebEngineWidgets.QWebEngineView</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
