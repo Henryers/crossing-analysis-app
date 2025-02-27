@@ -25,24 +25,25 @@ pip install -r requirements.txt
 以下是其中三种主题色切换效果图：
 
 ![img_2.png](image/img_2.png)
-（默认色调）
+
+<div align="center">（默认色调）</div>
 
 ![img_3.png](image/img_3.png)
-（黑色调）
+<div align="center">（黑色调）</div>
 
 ![img_4.png](image/img_4.png)
-（棕色调）
+<div align="center">（棕色调）</div>
 
 “关于”按钮的下拉框中，可选intro来查看本软件的简要介绍，也可选择version来查看软件当前版本相关信息。
 ![img_5.png](image/img_5.png)
-（intro软件介绍）
+<div align="center">（intro软件介绍）</div>
 
 ![img_6.png](image/img_6.png)
-（version版本信息）
+<div align="center">（version版本信息）</div>
 
 点击退出，在弹出的下拉框中点击exit即可退出本程序。
 ![img_7.png](image/img_7.png)
-（菜单栏下拉框显示）
+<div align="center">（菜单栏下拉框显示）</div>
 
 
 #### 侧边栏  
@@ -59,33 +60,33 @@ pip install -r requirements.txt
 
 在该页面中，用户点击选择select按钮，即可进入到文件管理器中，选择想要导入的数据，数据须为excel表格（.xlsx .xls格式）或者csv数据（.csv格式）。选择后开始加载数据，并将加载好的数据显示到下面的表格中。同时在数据表周围，还会呈现该表的基本信息，包括车辆数，车道位置等等。具体展示效果如下：
 ![img_10.png](image/img_10.png)
-（选择文件页面）
+<div align="center">（选择文件页面）</div>
 
 ![img_11.png](image/img_11.png)
-（数据集展示）
+<div align="center">（数据集展示）</div>
 
 ### 总体数据展示
 点击侧边栏的第三个选项卡，可对整个交叉口的数据进行汇总处理，并以热力图、3D图的形式直观展示所有数据的分布，如下图所示：
 ![img_12.png](image/img_12.png)
-（所有车辆的数据分布图）
+<div align="center">（所有车辆的数据分布图）</div>
 
 点击两个图表右上方的下拉框，还可以切换到行人/电动/自行车这一类的数据分布，以下是其展示效果图：
 ![img_13.png](image/img_13.png)
-（所有行人/电动/自行车的数据分布图）
+<div align="center">（所有行人/电动/自行车的数据分布图）</div>
 
 
 ### 所选数据分布
 点击侧边栏第四个选项卡，即可查看导入数据的相关信息。  
 若用户没选择数据集便点击到该页面，则会有弹框提示用户未选择数据集，页面上的相关区域不会显示图表。
 ![img_14.png](image/img_14.png)
-（弹框提示）
+<div align="center">（弹框提示）</div>
 
 若用户选择了数据集，则该页面会显示出两个图表，分别展示该数据集的热力分布图和3D柱状图，用户可具体查看所选数据集的数据分布。
 ![img_15.png](image/img_15.png)
-（选择车辆数据集的展示效果）
+<div align="center">（选择车辆数据集的展示效果）</div>
  
 ![img_16.png](image/img_16.png)
-（选择行人/小车数据集的展示效果）
+<div align="center">（选择行人/小车数据集的展示效果）</div>
 
 
 ### 所选数据分析
@@ -96,55 +97,55 @@ pip install -r requirements.txt
 其中统计不同时段车/人流量有下拉框，其中三个选项可选择多种图表呈现形式，如下图：
 
 ![img_18.png](image/img_18.png)
-（柱状图展示）
+<div align="center">（柱状图展示）</div>
  
 ![img_19.png](image/img_19.png)
-（折线图展示）
+<div align="center">（折线图展示）</div>
  
 ![img_20.png](image/img_20.png)
-（组合图展示）
+<div align="center">（组合图展示）</div>
 
 
 ### 具体车辆/行人数据分析
 在文本框中输入所需查询的对象id后，点击查询即可得到关于该对象的详细信息，如果在导入的数据表中查不到此id，会弹出提示框提示用户重新输入。如果此时还未加载数据集，则会弹出提示框提示用户未加载。
 
 ![img_21.png](image/img_21.png)
-（未加载的提示框）
+<div align="center">（未加载的提示框）</div>
 
 ![img_22.png](image/img_22.png) 
-（未找到记录的提示框）
+<div align="center">（未找到记录的提示框）</div>
 	
 如果查到后，会根据对象类型展示对应的模型图片，以及该对象的多种具体数值。对于该对象通过交叉口的全过程数据，可在右侧多种图表中进行呈现，其中包括行走曲率角度，速度、加速度分析以及全过程具体的位置移动路径。
 
 以下是其中三种类型的数据页面展示：
  
 ![img_23.png](image/img_23.png)
-（汽车展示效果图）
+<div align="center">（汽车展示效果图）</div>
  
 ![img_24.png](image/img_24.png)
-（公交车展示效果图）
+<div align="center">（公交车展示效果图）</div>
  
 ![img_25.png](image/img_25.png)
-（行人展示效果图）
+<div align="center">（行人展示效果图）</div>
 
 
 ### 基于pytorch的深度学习数据测试
 用户输入相关参数后点击训练模型，即可对相关交叉口数据进行训练，并在测试集上检测模型效果，通过折线图的形式展现出模型的收敛效果好坏。若用户输入参数不完整，则会弹出提示框提示用户输入不能为空。
 
 ![img_26.png](image/img_26.png)
-（输入信息不完整的弹框提示）
+<div align="center">（输入信息不完整的弹框提示）</div>
 
 用户还可在右侧继续修改相关参数，包括总迭代次数，学习率，批量处理大小三个参数选项，对模型进行调参，以获得最佳的模型表现效果。左侧会显示历次迭代的数据变化图，可直观展现模型的迭代过程和效果，右侧还会显示最终对应的loss损失值，训练集和测试集上的具体训练精度值，呈现最终效果，作为衡量模型优良的指标。具体效果展示如下：
  
 ![img_27.png](image/img_27.png)
-（训练完成时的展示效果）
+<div align="center">（训练完成时的展示效果）</div>
 
 
 ### 图表导出为图片
 在每个图表的周围，都有一个保存/导出按钮，可以将对应的图像进行重命名并保存导出为图片，利于用户存储记录一些包含关键数据的图表，效果展示如下：
 
 ![img_28.png](image/img_28.png) 
-（命名并保存为图片）
+<div align="center">（命名并保存为图片）</div>
  
 ![img_29.png](image/img_29.png)
-（成功导出图片展示）
+<div align="center">（成功导出图片展示）</div>
